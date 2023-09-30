@@ -8,16 +8,16 @@ This undertaking involves the implementation of a temperature surveillance syste
 
 ### Install the following for this project:
 
-Git
-Python 3.7+ (3.11+ preferred)
-VS Code Editor
-VS Code Extension: Python (by Microsoft)
-RabbitMQ Server installed and running locally
-pika 1.3.2 (or recent)
-Logger
-Webbrowser
-sys
-Time
+Git,
+Python 3.7+ (3.11+ preferred),
+VS Code Editor,
+VS Code Extension: Python (by Microsoft),
+RabbitMQ Server installed and running locally,
+pika 1.3.2 (or recent),
+Logger,
+Webbrowser,
+sys,
+Time,
 csv
 
 ## Smart Smoker System
@@ -40,11 +40,13 @@ Time Windows
 
 Smoker time window is 2.5 minutes
 Food time window is 10 minutes
-Deque Max Length
+
+## Deque Max Length
 
 At one reading every 1/2 minute, the smoker deque max length is 5 (2.5 min * 1 reading/0.5 min)
 At one reading every 1/2 minute, the food deque max length is 20 (10 min * 1 reading/0.5 min) 
-Condition To monitor
+
+## Condition To monitor
 
 If smoker temp decreases by 15 F or more in 2.5 min (or 5 readings)  --> smoker alert!
 If food temp change in temp is 1 F or less in 10 min (or 20 readings)  --> food stall alert!
@@ -61,3 +63,11 @@ General Design
 How many producer processes do you need to read the temperatures: One producer, built last project.
 How many listening queues do we use: three queues, named as listed above.
 How many listening callback functions do we need (Hint: one per queue): Three callback functions are needed.
+
+## Screenshots of conditions for monitoring and RabbitMQ while implementinng the time window, deque max lengths.
+
+![Alt text](<Emitter and Consumer with Food Alerts.png>)
+
+![Alt text](<Emitter and Consumer with Smoker Alerts.png>)
+
+![Alt text](<RabbitMQ and emmit.png>)
